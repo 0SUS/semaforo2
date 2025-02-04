@@ -28,40 +28,40 @@ set(PICO_BOARD pico_w CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(semaforo C CXX ASM)
+project(semaforo2 C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(semaforo semaforo.c )
+add_executable(semaforo2 semaforo2.c )
 
-pico_set_program_name(semaforo "semaforo")
-pico_set_program_version(semaforo "0.1")
+pico_set_program_name(semaforo2 "semaforo2")
+pico_set_program_version(semaforo2 "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(semaforo 0)
-pico_enable_stdio_usb(semaforo 1)
+pico_enable_stdio_uart(semaforo2 0)
+pico_enable_stdio_usb(semaforo2 1)
 
-pico_generate_pio_header(semaforo ${CMAKE_CURRENT_LIST_DIR}/semaforo.pio)
+pico_generate_pio_header(semaforo2 ${CMAKE_CURRENT_LIST_DIR}/semaforo2.pio)
 
-target_sources(semaforo PRIVATE semaforo.c)
+target_sources(semaforo2 PRIVATE semaforo2.c)
 
 # Add the standard library to the build
-target_link_libraries(semaforo PRIVATE
+target_link_libraries(semaforo2 PRIVATE
         pico_stdlib
         hardware_pio
         pico_bootrom)
 
 # Add the standard include files to the build
-target_include_directories(semaforo PRIVATE
+target_include_directories(semaforo2 PRIVATE
   ${CMAKE_CURRENT_LIST_DIR}
 )
 
 # Add any user requested libraries
-target_link_libraries(semaforo 
+target_link_libraries(semaforo2 
         
         )
 
-pico_add_extra_outputs(semaforo)
+pico_add_extra_outputs(semaforo2)
