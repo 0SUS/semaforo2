@@ -2,13 +2,13 @@
 # README - Controle de LEDs com Temporizador no Raspberry Pi Pico
 
 ## Descrição
-Este programa controla três LEDs (vermelho, amarelo e verde) conectados ao Raspberry Pi Pico. Quando o botão é pressionado, todos os LEDs acendem simultaneamente e, após intervalos de 3 segundos, eles se apagam progressivamente até que todos estejam desligados. Durante o ciclo de desligamento, novas ativações do botão são bloqueadas.
+Este programa controla três LEDs (azul, vermelho e verde) conectados ao Raspberry Pi Pico. Quando o botão é pressionado, todos os LEDs acendem simultaneamente e, após intervalos de 3 segundos, eles se apagam progressivamente até que todos estejam desligados. Durante o ciclo de desligamento, novas ativações do botão são bloqueadas.
 
 ## Requisitos
 - Placa **Raspberry Pi Pico**
 - Três LEDs conectados às GPIOs:
-  - **LED Vermelho** → GPIO 11
-  - **LED Amarelo** → GPIO 12
+  - **LED Azul** → GPIO 11
+  - **LED Vermelho** → GPIO 12
   - **LED Verde** → GPIO 13
 - Um botão de pressão (pushbutton) conectado à **GPIO 5** com resistor pull-up interno ativado
 - Ferramenta de desenvolvimento **BitDogLab** (opcional)
@@ -25,8 +25,8 @@ Este programa controla três LEDs (vermelho, amarelo e verde) conectados ao Rasp
 1. O programa inicia com todos os LEDs apagados.
 2. Quando o botão (GPIO 5) é pressionado:
    - Todos os LEDs acendem.
-   - Após 3 segundos, o **LED vermelho** apaga.
-   - Após mais 3 segundos, o **LED amarelo** apaga.
+   - Após 3 segundos, o **LED Azul** apaga.
+   - Após mais 3 segundos, o **LED Vermelho** apaga.
    - Após mais 3 segundos, o **LED verde** apaga.
 3. O botão só pode ser pressionado novamente após o último LED ser desligado.
 4. A saída serial exibe mensagens indicando o estado atual do sistema.
